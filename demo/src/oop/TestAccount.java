@@ -11,8 +11,9 @@ class Account {
 		acno = no;
 		ahname = name;
 	}
+	
 	// Method 
-	public void print() {
+	public void print() { 
 		System.out.println(acno);
 		System.out.println(ahname);
 		System.out.println(balance);
@@ -20,6 +21,14 @@ class Account {
 	
 	public void deposit(double amount) {
 		balance += amount;
+	}
+	
+	public void withdraw(double amount) {
+		balance -= amount;
+	}
+	
+	public double getBalance() {
+		return balance;
 	}
 }
 
@@ -32,10 +41,13 @@ public class TestAccount {
 		 a1.deposit(10000);
 		 a1.deposit(5000);
 		 a1.print(); 
+		 System.out.println(a1.getBalance());
 	
 		 
 		 Account a2 = new Account(2, "Scott");
 		 a2.print();
+		 
+		 
 		 
 	}
 
