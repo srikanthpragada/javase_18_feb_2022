@@ -1,54 +1,60 @@
 package oop;
 
 class Account {
-	// Instance variables 
+	// Instance variables
 	private int acno;
 	private String ahname;
 	private double balance;
+	private static int minbal = 10000;
 	
-    // Constructor 
-	public Account(int no, String name) {
-		acno = no;
-		ahname = name;
+	public static int getMinbal() {
+		return Account.minbal;
 	}
-	
-	// Method 
-	public void print() { 
-		System.out.println(acno);
-		System.out.println(ahname);
-		System.out.println(balance);
+
+	public Account(int acno, String ahname, double balance) {
+		this(acno, ahname); // call another constructor
+		this.balance = balance;
 	}
-	
+
+	public Account(int acno, String ahname) {
+		this.acno = acno;
+		this.ahname = ahname;
+	}
+
+	// Method
+	public void print() {
+		System.out.println(this.acno);
+		System.out.println(this.ahname);
+		System.out.println(this.balance);
+	}
+
 	public void deposit(double amount) {
-		balance += amount;
+		this.balance += amount;
 	}
-	
+
 	public void withdraw(double amount) {
-		balance -= amount;
+		this.balance -= amount;
 	}
-	
+
 	public double getBalance() {
-		return balance;
+		return this.balance;
 	}
 }
 
 public class TestAccount {
 
 	public static void main(String[] args) {
-		 Account a1; // object reference 
-		 
-		 a1 = new Account(1, "Joe");  // object 
-		 a1.deposit(10000);
-		 a1.deposit(5000);
-		 a1.print(); 
-		 System.out.println(a1.getBalance());
-	
-		 
-		 Account a2 = new Account(2, "Scott");
-		 a2.print();
-		 
-		 
-		 
+		Account a1; // object reference
+
+		a1 = new Account(1, "Joe"); // object
+		a1.deposit(10000);
+		a1.deposit(5000);
+		a1.print();
+		System.out.println(a1.getBalance());
+
+		Account a2 = new Account(2, "Scott", 10000);
+		a2.print();
+
 	}
 
 }

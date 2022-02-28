@@ -1,8 +1,16 @@
 package oop;
 
 class Product {
+	// Instance variables
 	private String name;
 	private int price;
+	
+	// Class variable
+	private static int taxRate = 12;
+	
+	public static void setTaxRate(int newRate) {
+		taxRate = newRate;
+	}
 	
 	public Product(String n, int p) {
 		name = n;
@@ -15,12 +23,12 @@ class Product {
 	}
 	
 	public int getNetPrice() {
-		return  price + (price * 12 / 100);
+		return  price + (price * taxRate / 100);
 	}
 }
 public class TestProduct {
 
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		 Product p = new Product("Dell XPS",200000);
 		 System.out.println(p.getNetPrice());
 	}
