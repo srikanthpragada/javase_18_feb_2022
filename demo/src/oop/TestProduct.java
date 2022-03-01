@@ -28,7 +28,7 @@ class Product {
 }
 public class TestProduct {
 
-	public void main(String[] args) {
+	public static void main(String[] args) {
 		 Product p = new Product("Dell XPS",200000);
 		 System.out.println(p.getNetPrice());
 	}
