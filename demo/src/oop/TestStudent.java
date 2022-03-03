@@ -1,6 +1,6 @@
 package oop;
 
-class Student {
+abstract class Student {
 	protected String name, email;
 
 	public Student(String name, String email) {
@@ -25,6 +25,8 @@ class Student {
 		System.out.println(this.name);
 		System.out.println(this.email);
 	}
+	
+	public abstract int getMarks(); 
 }
 
 class JavaStudent extends Student {
@@ -70,15 +72,19 @@ public class TestStudent {
 
 	public static void main(String[] args) {
 		Student s = new JavaStudent("James", "james@gmail.com", 90); // Upcasting
-		s.print();
+		s.print();  // Runtime Polymorphism
+		if (s.getMarks() > 50)
+			System.out.println("Passed!");
+		else
+			System.out.println("Failed!");
+			
 
 		s = new PythonStudent("Van", "van@microsoft.com", 95); // Upcasting
-		s.print();
-
-		PythonStudent p;
-
-		if (s instanceof PythonStudent)
-			p = (PythonStudent) s; // Downcasting
+		s.print(); // Runtime Polymorphism
+		if (s.getMarks() > 50)
+			System.out.println("Passed!");
+		else
+			System.out.println("Failed!");
 
 	}
 
