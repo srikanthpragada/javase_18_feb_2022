@@ -1,7 +1,7 @@
 package threads;
 
 class Data {
-	 synchronized public void print() {
+	 public synchronized void print() {
 		for (int i = 1; i <= 5; i++) {
 			System.out.println(i);
 			try {
@@ -14,13 +14,11 @@ class Data {
 
 class CThread extends Thread {
 	Data obj;
-
 	public CThread(Data obj) {
 		this.obj = obj;
 	}
-
 	public void run() {
-		obj.print();
+		this.obj.print();
 	}
 } // end of CThread
 
