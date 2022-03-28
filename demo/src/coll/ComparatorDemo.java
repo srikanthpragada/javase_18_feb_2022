@@ -16,14 +16,13 @@ class LengthCompare implements Comparator<String> {
 public class ComparatorDemo {
 	public static void main(String[] args) throws Exception {
 		var names = Files.readAllLines
-				 (Path.of("d:\\classroom\\feb18\\names.txt"));
+				 (Path.of("c:\\classroom\\feb18\\names.txt"));
 		
 		Collections.sort(names, new LengthCompare());
 	
 		for(var n : names)
 			 System.out.println(n);
-		
-		
+	
 		
 	}
 
