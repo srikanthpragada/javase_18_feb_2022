@@ -1,0 +1,7 @@
+This to test how our program is working!
+
+We use a RE to find all words in a given file.
+
+We use data structure map to stored keys and values. 
+
+Keys are words and values are count.
