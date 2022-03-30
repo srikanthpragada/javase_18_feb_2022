@@ -23,7 +23,6 @@ public class LambdaWithRunnable {
 			@Override
 			public void run() {
 				System.out.println("Printing number using anonymous class");
-
 			}
 		});
 		t2.start();
