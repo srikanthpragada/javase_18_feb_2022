@@ -17,7 +17,9 @@ public class StreamsArrays {
 		System.out.println("Numbers greater than average");
 		var avg  =  Arrays.stream(nums).average();    // returns OptionalDouble
 	    int average = (int) avg.getAsDouble();
-		Arrays.stream(nums).filter(v -> v > average).forEach(System.out::println);
+		Arrays.stream(nums)
+		      .filter(v -> v > average)
+		      .forEach(System.out::println);
 	}
 
 }
